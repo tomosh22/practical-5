@@ -22,11 +22,18 @@ def load_graph(fd):
     Each line in the file contains two white space seperated URLs and
     denotes a directed edge (link) from the first URL to the second.
     """
+    graph = {}
     # Iterate through the file line by line
     for line in fd:
         # And split each line into two URLs
         node, target = line.split()
-        raise RuntimeError("This function is not implemented yet.")
+        # if graph contains an array for node, append target to it
+        if node in graph:
+            graph[node].append(target)
+        # else initialise an array for node containing target
+        else:
+            graph[node] = [target]
+    return graph
 
 
 def print_stats(graph):
