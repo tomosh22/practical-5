@@ -38,7 +38,7 @@ def load_graph(fd):
 
 def print_stats(graph):
         """Print number of nodes and edges in the given graph"""
-        raise RuntimeError("This function is not implemented yet.")
+        print(f"{len(graph)} nodes and {sum(len(graph[x]) for x in graph)} edges")
 
 
 def stochastic_page_rank(graph, n_iter=1_000_000, n_steps=100):
